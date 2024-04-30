@@ -3,20 +3,21 @@
     "description": "A terminal pager program used to view (but not change) the contents of a text file one screen at a time, similar to the 'more' command.",
     "homepage": "https://www.greenwoodsoftware.com/less",
     "license": "GPL-3.0-only|BSD-3-Clause",
-    "url": "https://github.com/jftuga/less-Windows/archive/refs/tags/less-v643.zip",
-    "hash": "287c39b33d04e98a317502510a0a85a8fcb5684e7fd8f4afd676046ef4ab53b2",
-    "depends": "python",
-    "extract_dir": "less-Windows-less-v643",
+    "url": "http://greenwoodsoftware.com/less/less-643.zip",
+    "hash": "3bb417c4b909dfcb0adafc371ab87f0b22e8b15f463ec299d156c495fc9aa196",
+    "extract_dir": "less-643",
     "extract_to": "source",
     "installer": {
         "script": [
+            "Copy-Item \"$dir\\source\\defines.wn\" \"$dir\\source\\defines.h\"",
             "Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name sources) scripts/Utils.psm1)",
             "Initialize-VsDevShell | Out-Null",
             "[Console]::OutputEncoding = [System.Text.Encoding]::UTF8",
             "Push-Location \"$dir\\source\"",
-            "python \"$dir\\source\\build.py\" | Out-Null",
+            "nmake /f Makefile.wnm /c | Out-Null",
             "Pop-Location",
-            "Copy-Item \"$dir\\source\\*.exe\" \"$dir\"",
+            "Copy-Item \"$dir\\source\\less.exe\" \"$dir\"",
+            "Copy-Item \"$dir\\source\\lesskey.exe\" \"$dir\"",
             "Remove-Item -Recurse -Force \"$dir\\source\" | Out-Null"
         ]
     },
@@ -25,11 +26,11 @@
         "lesskey.exe"
     ],
     "checkver": {
-        "github": "https://github.com/jftuga/less-Windows",
-        "regex": "tag/less-v([\\d.]+)"
+        "url": "http://greenwoodsoftware.com/less/download.html",
+        "regex": "less-([\\d.]+).zip"
     },
     "autoupdate": {
-        "url": "https://github.com/jftuga/less-Windows/archive/refs/tags/less-v$version.zip",
-        "extract_dir": "less-Windows-less-v$version"
+        "url": "http://greenwoodsoftware.com/less/less-$version.zip",
+        "extract_dir": "less-$version"
     }
 }

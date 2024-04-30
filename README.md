@@ -10,16 +10,6 @@ Sources bucket for [Scoop](https://scoop.sh), the Windows command-line installer
 
 [Build Tools for Visual Studio](https://visualstudio.microsoft.com/downloads/?q=build+tools)
 
-### Other build tools
-
-#### Python
-
-Python will be installed automatically. You can also manually install it with scoop command:
-
-```pwsh
-scoop install main/python
-```
-
 ## How do I install these manifests?
 
 After manifests have been committed and pushed, run the following:
