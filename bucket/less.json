@@ -10,7 +10,7 @@
     "extract_to": "source",
     "installer": {
         "script": [
-            "Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name siku) scripts/Utils.psm1)",
+            "Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name sources) scripts/Utils.psm1)",
             "Initialize-VsDevShell | Out-Null",
             "[Console]::OutputEncoding = [System.Text.Encoding]::UTF8",
             "Push-Location \"$dir\\source\"",
