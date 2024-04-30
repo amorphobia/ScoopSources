@@ -1,0 +1,35 @@
+{
+    "version": "643",
+    "description": "A terminal pager program used to view (but not change) the contents of a text file one screen at a time, similar to the 'more' command.",
+    "homepage": "https://www.greenwoodsoftware.com/less",
+    "license": "GPL-3.0-only|BSD-3-Clause",
+    "url": "https://github.com/jftuga/less-Windows/archive/refs/tags/less-v643.zip",
+    "hash": "287c39b33d04e98a317502510a0a85a8fcb5684e7fd8f4afd676046ef4ab53b2",
+    "depends": "python",
+    "extract_dir": "less-Windows-less-v643",
+    "extract_to": "source",
+    "installer": {
+        "script": [
+            "Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name siku) scripts/Utils.psm1)",
+            "Initialize-VsDevShell | Out-Null",
+            "[Console]::OutputEncoding = [System.Text.Encoding]::UTF8",
+            "Push-Location \"$dir\\source\"",
+            "python \"$dir\\source\\build.py\" | Out-Null",
+            "Pop-Location",
+            "Copy-Item \"$dir\\source\\*.exe\" \"$dir\"",
+            "Remove-Item -Recurse -Force \"$dir\\source\" | Out-Null"
+        ]
+    },
+    "bin": [
+        "less.exe",
+        "lesskey.exe"
+    ],
+    "checkver": {
+        "github": "https://github.com/jftuga/less-Windows",
+        "regex": "tag/less-v([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://github.com/jftuga/less-Windows/archive/refs/tags/less-v$version.zip",
+        "extract_dir": "less-Windows-less-v$version"
+    }
+}
