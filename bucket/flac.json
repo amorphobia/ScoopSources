@@ -1,0 +1,53 @@
+{
+    "version": "1.4.3",
+    "description": "Free Lossless Audio Codec - command line tools",
+    "homepage": "https://xiph.org/flac/",
+    "license": {
+        "identifier": "BSD-3-Clause,GPL-3.0-or-later",
+        "url": "https://xiph.org/flac/license.html"
+    },
+    "url": [
+        "https://ftp.osuosl.org/pub/xiph/releases/flac/flac-1.4.3.tar.xz",
+        "https://ftp.osuosl.org/pub/xiph/releases/ogg/libogg-1.3.5.zip"
+    ],
+    "hash": [
+        "6c58e69cd22348f441b861092b825e591d0b822e106de6eb0ee4d05d27205b70",
+        "fd4e5ba7e93b84b3ec41cdf01494cc586ef6e912b313dbab25512dd02665dfaf"
+    ],
+    "depends": "cmake",
+    "extract_dir": [
+        "flac-1.4.3",
+        "libogg-1.3.5"
+    ],
+    "extract_to": [
+        "source",
+        "source\\ogg"
+    ],
+    "installer": {
+        "script": [
+            "cmake -Wno-dev -Wno-deprecated -S \"$dir\\source\" -B \"$dir\\build\" -DBUILD_SHARED_LIBS=ON -DBUILD_TESTING=OFF -DCMAKE_INSTALL_PREFIX=\"$dir\" | Out-Null",
+            "cmake --build \"$dir\\build\" --config Release | Out-Null",
+            "cmake --install \"$dir\\build\"",
+            "Remove-Item -Recurse -Force \"$dir\\source\" | Out-Null",
+            "Remove-Item -Recurse -Force \"$dir\\build\" | Out-Null"
+        ]
+    },
+    "bin": [
+        "bin\\flac.exe",
+        "bin\\metaflac.exe"
+    ],
+    "checkver": {
+        "url": "https://xiph.org/downloads/",
+        "regex": "(?sm)libogg-(?<ogg>[\\d\\.]+).zip.+flac-([\\d\\.]+).tar.xz"
+    },
+    "autoupdate": {
+        "url": [
+            "https://ftp.osuosl.org/pub/xiph/releases/flac/flac-$version.tar.xz",
+            "https://ftp.osuosl.org/pub/xiph/releases/ogg/libogg-$matchOgg.zip"
+        ],
+        "extract_dir": [
+            "flac-$version",
+            "libogg-$matchOgg"
+        ]
+    }
+}
