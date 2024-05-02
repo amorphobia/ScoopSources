@@ -28,8 +28,7 @@
             "cmake -Wno-dev -Wno-deprecated -S \"$dir\\source\" -B \"$dir\\build\" -DBUILD_SHARED_LIBS=ON -DBUILD_TESTING=OFF -DCMAKE_INSTALL_PREFIX=\"$dir\" | Out-Null",
             "cmake --build \"$dir\\build\" --config Release | Out-Null",
             "cmake --install \"$dir\\build\"",
-            "Remove-Item -Recurse -Force \"$dir\\source\" | Out-Null",
-            "Remove-Item -Recurse -Force \"$dir\\build\" | Out-Null"
+            "Remove-Item -Recurse -Force \"$dir\\source\", \"$dir\\build\" -ErrorAction SilentlyContinue"
         ]
     },
     "bin": [
