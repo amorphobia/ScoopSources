@@ -1,0 +1,29 @@
+{
+    "version": "1.85.0",
+    "description": "Boost C++ Libraries",
+    "license": "BSL-1.0",
+    "url": "https://downloads.sourceforge.net/project/boost/boost/1.85.0/boost_1_85_0.7z",
+    "hash": "sha1:43f4111aa4c47d689423fac3c3ebe5cd1cda7184",
+    "extract_dir": "boost_1_85_0",
+    "installer": {
+        "script": [
+            "Push-Location $dir",
+            "& \"$dir\\bootstrap.bat\" | Out-Null",
+            "& \"$dir\\b2.exe\" \"--prefix=$dir\" \"--build-dir=$dir\\build\" \"variant=debug,release\" \"link=static,shared\" \"address-model=64\" \"install\" | Out-Null",
+            "Remove-Item -Recurse -Force \"$dir\\include\", \"$dir\\build\", \"$dir\\b2.exe\", \"$dir\\project-config.jam\", \"$dir\\tools\\build\\src\\engine\\*.obj\", \"$dir\\tools\\build\\src\\engine\\b2.exe\" -ErrorAction SilentlyContinue",
+            "Pop-Location"
+        ]
+    },
+    "env_set": {
+        "BOOST_ROOT": "$dir",
+        "Boost_INCLUDE_DIR": "$dir\\boost"
+    },
+    "checkver": {
+        "sourceforge": "boost/boost",
+        "regex": "([\\d.]+)+/boost_(?:[\\d_]+)\\.7z"
+    },
+    "autoupdate": {
+        "url": "https://downloads.sourceforge.net/project/boost/boost/$version/boost_$underscoreVersion.7z",
+        "extract_dir": "boost_$underscoreVersion"
+    }
+}
