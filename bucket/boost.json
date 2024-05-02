@@ -1,6 +1,7 @@
 {
     "version": "1.85.0",
     "description": "Boost C++ Libraries",
+    "homepage": "https://www.boost.org/",
     "license": "BSL-1.0",
     "url": "https://downloads.sourceforge.net/project/boost/boost/1.85.0/boost_1_85_0.7z",
     "hash": "sha1:43f4111aa4c47d689423fac3c3ebe5cd1cda7184",
