@@ -11,7 +11,8 @@
         "script": [
             "Push-Location \"$dir\\source\"",
             "Copy-Item \"$dir\\source\\defines.wn\" \"$dir\\source\\defines.h\"",
-            "Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name sources) scripts/Utils.psm1)",
+            "$bucket = (scoop bucket list | Where-Object { (Convert-RepositoryUri -Uri $_.Source) -eq \"github.com/amorphobia/ScoopSources\" }).Name",
+            "Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name $bucket) scripts/Utils.psm1)",
             "Initialize-VsDevShell | Out-Null",
             "nmake /f Makefile.wnm /c | Out-Null",
             "Copy-Item \"$dir\\source\\less.exe\", \"$dir\\source\\lesskey.exe\" \"$dir\" -ErrorAction SilentlyContinue",
