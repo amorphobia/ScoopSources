@@ -1,11 +1,11 @@
 {
-    "version": "643",
+    "version": "661",
     "description": "A terminal pager program used to view (but not change) the contents of a text file one screen at a time, similar to the 'more' command.",
     "homepage": "https://www.greenwoodsoftware.com/less",
     "license": "GPL-3.0-only|BSD-3-Clause",
-    "url": "https://greenwoodsoftware.com/less/less-643.zip",
-    "hash": "3bb417c4b909dfcb0adafc371ab87f0b22e8b15f463ec299d156c495fc9aa196",
-    "extract_dir": "less-643",
+    "url": "https://greenwoodsoftware.com/less/less-661.zip",
+    "hash": "a900e3916738bf8c1a0a2a059810f1c59b8271ac8bb46898c6e921ea6aefd757",
+    "extract_dir": "less-661",
     "extract_to": "source",
     "installer": {
         "script": [
