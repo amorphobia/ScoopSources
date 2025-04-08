@@ -1,13 +1,13 @@
 {
-    "version": "1.8.4",
+    "version": "1.9.0",
     "description": "A cross-platform, linkable library implementation of Git that you can use in your application.",
     "homepage": "https://libgit2.org/",
     "license": {
         "identifier": "GPL-2.0-only",
         "url": "https://github.com/libgit2/libgit2/blob/main/COPYING"
     },
-    "url": "https://github.com/libgit2/libgit2/archive/refs/tags/v1.8.4.zip#/dl.zip_",
-    "hash": "8e0ed7501cb3a8923e29c5ba57786f900071b4d75107f694cbd5ec45c9fd3367",
+    "url": "https://github.com/libgit2/libgit2/archive/refs/tags/v1.9.0.zip#/dl.zip_",
+    "hash": "ee96e27ffc10ebce8a12a2dd760bcda6dbc00aeef3baa0c28f88f0f9ead57d98",
     "depends": [
         "cmake",
         "7zip19.00-helper"
