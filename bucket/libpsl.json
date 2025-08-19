@@ -21,7 +21,7 @@
     "bin": "bin\\psl.exe",
     "env_set": {
         "LIBPSL_INCLUDE_DIR": "$dir\\include",
-        "LIBPSL_LIBRARY": "$dir\\lib"
+        "LIBPSL_LIBRARY": "$dir\\lib\\psl.lib"
     },
     "checkver": {
         "github": "https://github.com/rockdaboot/libpsl"
