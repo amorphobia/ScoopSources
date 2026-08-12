@@ -1,11 +1,11 @@
 {
-    "version": "1.91.0",
+    "version": "1.92.0",
     "description": "Boost C++ Libraries",
     "homepage": "https://www.boost.org/",
     "license": "BSL-1.0",
-    "url": "https://downloads.sourceforge.net/project/boost/boost/1.91.0/boost_1_91_0.7z",
-    "hash": "sha1:a120a631fe42d4f3344de366928c860248e6c697",
-    "extract_dir": "boost_1_91_0",
+    "url": "https://downloads.sourceforge.net/project/boost/boost/1.92.0/boost_1_92_0.7z",
+    "hash": "sha1:5e6d26678ed159faaa7daa6c8504856e202a28fd",
+    "extract_dir": "boost_1_92_0",
     "installer": {
         "script": [
             "Push-Location $dir",
