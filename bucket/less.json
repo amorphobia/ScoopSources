@@ -19,10 +19,7 @@
             "Pop-Location"
         ]
     },
-    "bin": [
-        "less.exe",
-        "lesskey.exe"
-    ],
+    "bin": "less.exe",
     "checkver": {
         "url": "https://greenwoodsoftware.com/less/download.html",
         "regex": "less-([\\d.]+).zip"
